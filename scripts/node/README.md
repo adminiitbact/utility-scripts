@@ -3,7 +3,7 @@
 Install required packages
 
 ```
-$ npm i fast-csv generate-password argparse firebase-admin
+$ npm i fast-csv generate-password argparse firebase-admin stream mysql axios
 ```
 
 ### To create firebase  credentials for users.
@@ -75,6 +75,18 @@ uid3
 ### To list all existing users in firebase
 ```
 $ node firebase-admin-utils.js -c <path-to-firebase-admin-credentials> -o ename-to-write-user-info> -a list
+```
+
+### To push data to the Power BI dashboard
+
+Please set the required env variables
+
+```
+export DB_HOST=<mysqlserver host>
+export DB_NAME=<mysqldb_name>
+export DB_USER=<mysql-user>
+export DB_PASS=<mysql-user-passwd>
+export PUSH_URI=<powerbi-uri-for-push>
 ```
 
 

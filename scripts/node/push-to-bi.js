@@ -56,9 +56,19 @@ WHERE facility_id NOT IN (999,2,3,4) \
 GROUP BY w.facility_id) AS temp2 ON temp1.facility_id=temp2.fid;";
 
 var dataToPush = [];
+function getDate() {
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0');
+    var yyyy = today.getFullYear();
+    today = mm + '/' + dd + '/' + yyyy;
+    return today;
+}
+var currentDate = getDate(); 
 connection.query(query).stream().pipe(stream.Transform({
     objectMode: true,
     transform: function(data,encoding,callback) {
+      data.created_date = currentDate;
       dataToPush.push(data);
       if(dataToPush.length < CHUNK_PUSH_SIZE) {
         callback();

@@ -1,4 +1,4 @@
-const mysql      = require('mysql');
+const mysql = require('mysql');
 const axios = require('axios');
 const stream = require('stream');
 
@@ -20,6 +20,8 @@ var connection = mysql.createConnection({
       return (field.string() === '1'); // 1 = true, 0 = false
     } else if(NUMERIC_TYPES.includes(field.name)) {
         return Number(field.string());
+    } else if(field.name === 'government_hospital') {
+      return (field.string() === '1')?'government': 'private';
     } else {
       return next();
     }

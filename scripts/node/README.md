@@ -89,5 +89,8 @@ export DB_PASS=<mysql-user-passwd>
 export PUSH_URI=<powerbi-uri-for-push>
 ```
 
+```
+node push-to-bi.js
+```
 
 

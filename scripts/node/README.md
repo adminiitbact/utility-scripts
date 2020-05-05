@@ -93,4 +93,12 @@ export PUSH_URI=<powerbi-uri-for-push>
 node push-to-bi.js
 ```
 
+### Embed report to webapp  (links)
 
+Follow all the steps
+
+```
+https://docs.microsoft.com/en-us/power-bi/developer/embedded/embed-sample-for-customers
+https://docs.microsoft.com/en-us/power-bi/developer/embedded/register-app
+https://github.com/microsoft/PowerBI-Developer-Samples/tree/master/NodeJS/Embed%20Token%20Generation
+```
